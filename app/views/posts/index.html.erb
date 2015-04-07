@@ -3,5 +3,6 @@
 <% @posts.each do |post|%>
       <p><%= post.post_content %></p>
       <p><%= post.user.handle %></p>
+      <a href="/posts/<%= post.id %>/comments/new">Add a new comment</a>
 <% end %>
 </div>
