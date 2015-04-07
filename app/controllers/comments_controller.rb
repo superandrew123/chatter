@@ -18,3 +18,6 @@ class CommentsController < ApplicationController
     params.require(:comment).permit(:comment_content)
   end
 end
+
+
+
