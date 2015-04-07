@@ -1,16 +1,15 @@
 <h2>Sign up</h2>
-
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
   <div class="field">
     <%= f.label :name %><br />
-    <%= f.textfield :name %>
+    <%= f.text_field :name %>
   </div>
 
   <div class="field">
     <%= f.label :handle %><br />
-    <%= f.textfield :handle, autofocus: true %>
+    <%= f.text_field :handle, autofocus: true %>
   </div>
 
   <div class="field">
