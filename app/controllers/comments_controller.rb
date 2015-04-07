@@ -10,7 +10,7 @@ class CommentsController < ApplicationController
     @comment.post_id=params[:post_id]
     @comment.user_id=current_user.id
     @comment.save
-    binding.pry
+    redirect_to root_path
   end
 
   private
