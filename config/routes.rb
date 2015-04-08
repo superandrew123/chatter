@@ -6,9 +6,9 @@ Rails.application.routes.draw do
   end
 
   resources :followers, except: [:edit, :update]
-  resources :users, only: :show
   root "posts#index"
   devise_for :users, :controllers => { registrations: 'registrations' }
+  resources :users, only: :show
 
 
 end
