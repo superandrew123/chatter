@@ -1,15 +1,15 @@
 <div class="col-md-3"></div>
 <div class="col-md-6">
 
-<a href="/posts/new">New Post</a>
+<% if current_user %><a href="/posts/new">New Post</a><% end %>
 	<% @posts.each do |post|%>
 	<div class="post_div">
-		<p><%= post.post_content %></p>
-		<p><%= post.user.handle %></p>
-		<a href="/posts/<%= post.id %>/comments/new">Add a new comment</a>
+		<p>Post: <%= post.post_content %></p>
+		<p>author: <%= link_to "#{post.user.handle}", user_path(post.user) %></p>
+		<% if current_user %><a href="/posts/<%= post.id %>/comments/new">Reply</a> <% end %>
 		<% post.comments.each do |comment|%>
-			<p><%= comment.comment_content %></p>
-			<p><%= comment.user.handle %></p>
+			<p>Comment: <%= comment.comment_content %></p>
+			<p>comment_author: <%= link_to "#{comment.user.handle}", user_path(comment.user) %></p>
 		<% end %>
 	</div>	
 	<% end %>
