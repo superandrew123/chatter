@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  def create
+  def show
     binding.pry
   end
 end

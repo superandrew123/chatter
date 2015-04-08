@@ -8,6 +8,7 @@
 
       <ul class="nav navbar-nav navbar-right">
         <% if current_user %>
+          <li><a class="btn" href="<%= user_path(current_user) %>">Profile</a></li>
 					<li><a class="btn" href="/users/sign_out">Log Out</a></li>
 				<% else %>
 					<li><a class="btn" href="/users/sign_up">Sign Up!</a></li>
