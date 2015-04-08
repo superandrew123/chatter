@@ -1,12 +1,21 @@
 
-<div class="col-md-3"></div>
+<div class="col-md-3">
+<br>
+	<h4>Followers: <%= @followers_count%></h4>
+	<h4>Following: <%= @followings_count%></h4>
+</div>
 <div class="col-md-6">
 	<h2><%= @user.handle %><%=", #{@user.name}" if @user.name.length > 0 %></h2>
-	<% if @following_status %>
-		<%= link_to "Unfollow this user!", @follower, method: :delete %>
+	<% if current_user %>
+		<% if @following_status %>
+			<%= link_to "Unfollow", @follower, method: :delete %>
+		<% else %>
+			<%= link_to "Follow", new_follower_path(@user) if @user != current_user %><br><br>
+		<% end %>
 	<% else %>
-		<%= link_to "Follow this user!", new_follower_path(@user) if @user != current_user %><br><br>
+		<a href="/users/sign_up">Sign-up to follow!</a><br><br>
 	<% end %>
+
 	<% @user.posts.each do |post| %>
 		<p>Post: <%= post.post_content %></p><br>
 	<% end %>

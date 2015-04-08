@@ -9,3 +9,7 @@ task :delete_expired => [:environment] do
   DeleteExpired.start
 end
 
+task :console => [:environment] do
+  Pry.start
+end
+
