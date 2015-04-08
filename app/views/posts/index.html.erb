@@ -1,7 +1,9 @@
 <div class="col-md-3"></div>
 <div class="col-md-6">
+
 <a href="/posts/new">New Post</a>
 	<% @posts.each do |post|%>
+	<div class="post_div">
 		<p><%= post.post_content %></p>
 		<p><%= post.user.handle %></p>
 		<a href="/posts/<%= post.id %>/comments/new">Add a new comment</a>
@@ -9,5 +11,7 @@
 			<p><%= comment.comment_content %></p>
 			<p><%= comment.user.handle %></p>
 		<% end %>
+	</div>	
 	<% end %>
+
 </div>

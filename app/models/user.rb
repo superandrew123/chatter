@@ -5,6 +5,9 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   has_many :posts
   has_many :comments
+  has_many :followers, :class_name => 'Follower', foreign_key: 'followed_id'
+  has_many :followings, :class_name => 'Follower', foreign_key: 'follower_id'
+
 
   validates_uniqueness_of :handle, :email
   validates_presence_of :handle, :email
