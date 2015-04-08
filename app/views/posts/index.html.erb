@@ -1,13 +1,13 @@
 <div class="col-md-3"></div>
 <div class="col-md-6">
 <a href="/posts/new">New Post</a>
-<% @posts.each do |post|%>
-      <p><%= post.post_content %></p>
-      <p><%= post.user.handle %></p>
-      <a href="/posts/<%= post.id %>/comments/new">Add a new comment</a>
-        <% post.comments.each do |comment|%>
-          <p><%= comment.comment_content %></p>
-          <p><%= comment.user.handle %></p>
-        <% end %>
-<% end %>
+	<% @posts.each do |post|%>
+		<p><%= post.post_content %></p>
+		<p><%= post.user.handle %></p>
+		<a href="/posts/<%= post.id %>/comments/new">Add a new comment</a>
+		<% post.comments.each do |comment|%>
+			<p><%= comment.comment_content %></p>
+			<p><%= comment.user.handle %></p>
+		<% end %>
+	<% end %>
 </div>

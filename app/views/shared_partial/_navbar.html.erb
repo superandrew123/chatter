@@ -1,0 +1,19 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <p class="navbar-brand" href="#">chatter</p>
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+      <ul class="nav navbar-nav navbar-right">
+        <% if current_user %>
+					<li><a class="btn" href="/users/sign_out">Log Out</a></li>
+				<% else %>
+					<li><a class="btn" href="/users/sign_up">Sign Up!</a></li>
+					<li><a class="btn" href="/users/sign_in">Log In</a></li>
+				<% end %>
+      </ul>
+    </div>
+  </div>
+</nav>
