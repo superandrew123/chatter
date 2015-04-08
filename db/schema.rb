@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150407210300) do
+ActiveRecord::Schema.define(version: 20150408131932) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,9 +27,9 @@ ActiveRecord::Schema.define(version: 20150407210300) do
   create_table "posts", force: :cascade do |t|
     t.string   "post_content"
     t.integer  "user_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-    t.datetime "expired"
+    t.datetime "created_at",                                   null: false
+    t.datetime "updated_at",                                   null: false
+    t.datetime "expired",      default: '2015-04-15 13:23:56'
   end
 
   create_table "users", force: :cascade do |t|
