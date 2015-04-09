@@ -14,7 +14,10 @@ class UsersController < ApplicationController
 
     @followings_count = @user.followings.count
     @followers_count = @user.followers.count
+  end
 
+  def search
+    binding.pry
   end
 
 end
