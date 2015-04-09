@@ -18,6 +18,11 @@ class UsersController < ApplicationController
 
   def search
     binding.pry
+    @q = "#{params[:query]}%"
+    binding.pry
+    @users = User.where("handle LIKE ? or name LIKE ?", @q, @q)
+     binding.pry   
+    render '/posts/index'
   end
 
 end
