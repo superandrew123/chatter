@@ -3,10 +3,10 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-  has_many :posts
-  has_many :comments
-  has_many :followers, :class_name => 'Follower', foreign_key: 'followed_id'
-  has_many :followings, :class_name => 'Follower', foreign_key: 'follower_id'
+  has_many :posts, :dependent => :destroy
+  has_many :comments, :dependent => :destroy
+  has_many :followers, :class_name => 'Follower', foreign_key: 'followed_id', :dependent => :destroy
+  has_many :followings, :class_name => 'Follower', foreign_key: 'follower_id', :dependent => :destroy
 
 
   validates_uniqueness_of :handle, :email

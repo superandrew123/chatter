@@ -11,4 +11,5 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :index]
 
   post 'users/search' => 'users#search', as: 'search_users'
+
 end
