@@ -6,7 +6,7 @@
 	<% @posts.each do |post|%>
 	<div class="post_div">
 		<p>Post: <%= post.post_content %></p>
-			<div>Post and it's comments will self destruct in <span id="time"></span> minutes!</div>
+	<!-- 		<div>Post and it's comments will self destruct in <span id="time"></span> minutes!</div> -->
 		<p>author: <%= link_to "#{post.user.handle}", user_path(post.user) %></p>
 		<% if current_user %><a href="/posts/<%= post.id %>/comments/new">Reply</a> <% end %>
 		<% post.comments.each do |comment|%>
