@@ -1,5 +1,9 @@
 class UsersController < ApplicationController
 
+  def index
+    # binding.pry
+  end
+
   def show
     @user = User.find(params[:id])
     # check to see if current_user is already following @user
@@ -10,11 +14,14 @@ class UsersController < ApplicationController
         @following_status = true
       end
     end
-    # binding.pry
-
     @followings_count = @user.followings.count
     @followers_count = @user.followers.count
+  end
 
+  def search
+    @q = "%#{params[:query]}%"
+    @users = User.where("handle LIKE ? or name LIKE ?", @q, @q)  
+    render :"/users/index"
   end
 
 end
