@@ -13,7 +13,7 @@
 			<%= link_to "Follow", new_follower_path(@user) if @user != current_user %><br><br>
 		<% end %>
 	<% else %>
-		<a href="/users/sign_up">Sign-up to follow!</a><br><br>
+		<a href="/users/sign_up">Sign-up</a> or <a href="/users/sign_in">Log-in</a> to follow!<br><br>
 	<% end %>
 
 	<% @user.posts.each do |post| %>
