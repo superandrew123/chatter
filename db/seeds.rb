@@ -8,7 +8,7 @@ users = User.create([{name: "Andrew Miksch", handle: "superandrew", email: "andr
   {name: "Jada Pinkett Smith", handle: "Jada", email: "jada@email.com", password: "password"},
   {name: "Taylor Swift", handle: "SoSwift", email: "taylor@email.com", password: "password"},
   {name: "Karlie Kloss", handle: "TheKloss", email: "Karlie@email.com", password: "password"},])
-
+User.all.pluck(:id)
 #posts = Post.create([{}])
 
 # This file should contain all the record creation needed to seed the database with its default values.

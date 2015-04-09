@@ -1,7 +1,10 @@
 <div class="col-md-3"></div>
 <div class="col-md-6">
 	<p>You searched for <%= @q.gsub("%","") %>, here are your results:</p><br>
-	<% @users.each do |user| %>
-		<%= link_to "#{user.handle}", user_path(user) %><br>
+	<% @results.each do |result| %>
+		<%= link_to "#{result.handle}", user_path(result) if result.class == User %><br>
+		<% if result.class == Post %>
+			<p>Post: "<%= result.post_content %>"<br>post_author: <%= link_to "#{result.user.handle}", user_path(result.user) %></p>
+		<% end %>
 	<% end %>
 </div>

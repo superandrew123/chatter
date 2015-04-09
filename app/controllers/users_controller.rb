@@ -19,8 +19,8 @@ class UsersController < ApplicationController
   end
 
   def search
-    @q = "%#{params[:query]}%"
-    @users = User.where("handle LIKE ? or name LIKE ?", @q, @q)  
+    @q = params[:query]
+    @results = Search.search(@q)
     render :"/users/index"
   end
 
