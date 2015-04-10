@@ -5,8 +5,8 @@
 <% i=0 %>
 <% @posts.each do |post|%>
 	<div class="post_div">
-		<div id="countdown">
-		<input type="hidden" name="expiredate" id="expiredate" value="<% post.expired %>"/>		
+		<div class="countdown">
+		<span class="expiredate" value="<%= post.expired %>">Expiring in: </span>		
 			<span class="days">00</span>
 			<span class="timeRefDays">days</span>
 			<span class="hours">00</span>
@@ -29,5 +29,3 @@
 	<% end %>
 
 </div>
-
-
