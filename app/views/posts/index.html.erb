@@ -4,7 +4,17 @@
 <% if current_user %><a href="/posts/new">New Post</a><% end %>
 <% @posts.each do |post|%>
 	<div class="post_div">
-		<span class="expiredate" value="<%= post.expired %>">Expiring at: <%= post.expired.strftime("%m/%d/%Y at %I:%M%p") %></span>
+		<div class="countdown">
+		<span class="expiredate" value="<%= post.expired %>">Expiring in: </span>		
+			<span class="days">00</span>
+			<span class="timeRefDays">days</span>
+			<span class="hours">00</span>
+			<span class="timeRefHours">hours</span>
+			<span class="minutes">00</span>
+			<span class="timeRefMinutes">minutes</span>
+			<span class="seconds">00</span>
+			<span class="timeRefSeconds">seconds</span>
+		</div>
 		<p>Post: <%= post.post_content %></p>
 
 		<p>author: <%= link_to "#{post.user.handle}", user_path(post.user) %></p>
@@ -17,5 +27,3 @@
 	<% end %>
 
 </div>
-
-
