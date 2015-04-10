@@ -13,7 +13,9 @@
 	<p>Post: <%= post.post_content %></p>
 
 	<p>author: <%= link_to "#{post.user.handle}", user_path(post.user) %></p>
-	<% if current_user %><a href="/posts/<%= post.id %>/comments/new">Reply</a> <% end %>
+	<% if current_user != nil %>
+		<a href="/posts/<%= post.id %>/comments/new">Reply</a> 
+	<% end %>
 	<% post.comments.each do |comment|%>
 		<p>Comment: <%= comment.comment_content %></p>
 		<p>comment_author: <%= link_to "#{comment.user.handle}", user_path(comment.user) %></p>
