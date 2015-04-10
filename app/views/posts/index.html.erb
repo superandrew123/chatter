@@ -5,18 +5,7 @@
 <% i=0 %>
 <% @posts.each do |post|%>
 	<div class="post_div">
-		<div id="countdown">
-		<input type="hidden" name="expiredate" id="expiredate" value="<% post.expired %>"/>		
-			<span class="days">00</span>
-			<span class="timeRefDays">days</span>
-			<span class="hours">00</span>
-			<span class="timeRefHours">hours</span>
-			<span class="minutes">00</span>
-			<span class="timeRefMinutes">minutes</span>
-			<span class="seconds">00</span>
-			<span class="timeRefSeconds">seconds</span>
-		</div>
-		<% i += 1 %>
+		<p>Post expiration date: <%= post.expired.strftime("%m/%d/%Y at %I:%M%p") %></p>
 		<p>Post: <%= post.post_content %></p>
 
 		<p>author: <%= link_to "#{post.user.handle}", user_path(post.user) %></p>
