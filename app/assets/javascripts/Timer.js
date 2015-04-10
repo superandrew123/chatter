@@ -59,14 +59,22 @@
         return futureFormattedDate
     }
 
-    $("#countdown").countdown({
-        date:  "8 June 2015 09:00:00", //"$("#expiredate").val())",  //$("#expiredate").attr('value'),  //8 June 2015 09:00:00", Change this to your desired date to countdown to
-        format: "on"
-    });
+    $(".countdown").each(function(){
+        $(this).countdown({
+            date: $(this).children('.expiredate').attr("value"),
+            format: "on"
+        });
+    })
+
+    // $(".countdown").countdown({
+    //     //debugger;
+    //     date:  "8 June 2015 09:00:00", //"$("#expiredate").val())",  //$("#expiredate").attr('value'),  //8 June 2015 09:00:00", Change this to your desired date to countdown to
+    //     format: "on"
+    // });
 });
 
 
-// $("input[type=hidden]").each(function() {
+// $("expiredate").each(function() {
 //      $(this).val() //make countdown date
 // });
 

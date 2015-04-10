@@ -5,13 +5,12 @@
 	<%= form_for @post do |f| %>
 		<%= f.text_field :post_content %>
 		<%= f.submit %>
-	<% end %>
-<% end %><br>
+	<%end %>
+<% end %>
+<% if current_user %><a href="/posts/new">New Post</a><% end %>
 <div id="posts">
 	<% @posts.each do |post|%>
 		<%= render "show_post", :post => post %>
 	<% end %>
 	</div>
 </div>
-
-
