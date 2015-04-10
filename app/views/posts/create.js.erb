@@ -1,2 +1,8 @@
 // select the div partial will go inside of
-$("#posts").prepend("<%= j render partial:"show_post", locals:{post: @post} %>")
+$("#posts").prepend("<%= j render partial:"show_post", locals:{post: @post} %>");
+$(".countdown").each(function(){
+	$(this).countdown({
+		date: $(this).children('.expiredate').attr("value"),
+		format: "on"
+	});
+})

@@ -7,7 +7,7 @@
 		<%= f.submit %>
 	<%end %>
 <% end %>
-<% if current_user %><a href="/posts/new">New Post</a><% end %>
+<br>
 <div id="posts">
 	<% @posts.each do |post|%>
 		<%= render "show_post", :post => post %>
