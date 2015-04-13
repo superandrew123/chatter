@@ -12,8 +12,14 @@
 
 #post_post_content {
 	height: 3.3em;
-	width: 79.5%;
+	width: 85.3333%;
 	word-break: break-word;
 	padding-bottom: 0;
 	vertical-align: top;
+	padding-left: 1em;
+	margin-right: 0.5em;
+}
+.btn-primary {
+	height: 49px;
+	
 }
