@@ -1,16 +1,22 @@
 class CommentsController < ApplicationController
   def new
     @comment = Comment.new
-    #binding.pry
+    @comment.post_id = params[:post_id]
+    respond_to do |format|
+      format.js { }
+    end
   end
 
   def create
-    #@post = Post.find_by(:id => params[:post_id])
     @comment = Comment.new(comment_params)
-    @comment.post_id=params[:post_id]
-    @comment.user_id=current_user.id
+    @comment.post_id = params[:post_id]
+    @comment.user_id = current_user.id
     @comment.save
-    redirect_to root_path
+    # @comment.post.comments.last
+    # binding.pry
+    respond_to do |format|
+      format.js { }
+    end
   end
 
   private

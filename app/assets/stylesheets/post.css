@@ -1,0 +1,15 @@
+.post_content {
+	font-size: 1.4em;
+}
+.post_div {
+	padding: 1em;
+	background-color: rgb(231,236,238);
+	margin-bottom: 1em;
+	border-style: solid;
+	border-color: rgb(212,221,232);
+	border-radius: 0.25em;
+}
+/*212221232
+div.post_div {
+	border: 2px solid black;
+}*/

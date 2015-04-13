@@ -1,0 +1,6 @@
+// Append the post with a comment form
+// We'll need to use the post_id to attach it to the right form
+// @comment has that already.
+var aTag = ".commentButton[href='/posts/<%= @comment.post_id %>/comments/new']"
+$(aTag).replaceWith("<%= j render partial:"new" %>")
+$(".new_comment").on("submit", createComment);

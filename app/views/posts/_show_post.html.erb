@@ -1,4 +1,4 @@
-<div class="post_div">
+<div id="post_<%= post.id %>"class="post_div">
 	<div class="countdown">
 		<span class="expiredate" value="<%= post.expired %>">Expiring in: </span>		
 			<span class="days">00</span>
@@ -10,14 +10,15 @@
 			<span class="seconds">00</span>
 			<span class="timeRefSeconds">seconds</span>
 		</div>
-	<p>Post: <%= post.post_content %></p>
+	<p class="post_content"><%= post.post_content %></p>
 
-	<p>author: <%= link_to "#{post.user.handle}", user_path(post.user) %></p>
+	<p>by: <%= link_to "#{post.user.handle}", user_path(post.user) %></p>
+	<div id="comment_post_<%= post.id %>">
+		<% post.comments.each do |comment|%>
+			<%= render "/comments/show_comment", :comment => comment %>
+		<% end %>
+	</div>
 	<% if current_user != nil %>
-		<a href="/posts/<%= post.id %>/comments/new">Reply</a> 
+		<a class="commentButton" href="/posts/<%= post.id %>/comments/new">Reply</a><br> 
 	<% end %>
-	<% post.comments.each do |comment|%>
-		<p>Comment: <%= comment.comment_content %></p>
-		<p>comment_author: <%= link_to "#{comment.user.handle}", user_path(comment.user) %></p>
-<% end %>
 </div>	

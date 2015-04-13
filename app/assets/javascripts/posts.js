@@ -1,9 +1,5 @@
 // Ajax for posts on main page
 
-$(document).ready(function(){
-	newPost();
-});
-
 function newPost(){
 	$(".new_post").on("submit", function(e){
 		e.preventDefault();
