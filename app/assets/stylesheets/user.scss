@@ -1,12 +1,12 @@
 .handle{
   text-align: center;
-  font-size: 50pt;
+  font-size: 40pt;
   font-weight: bold;
 }
 
 .username{
   text-align: center;
-  font-size: 35pt;
+  font-size: 30pt;
   font-weight: lighter;
 }
 
@@ -22,5 +22,19 @@
   background-size: cover;
   display: block;
   border-style: solid;
+  }
+
+  .table{
+    margin: 0px;
+    padding: 0px;
+    text-align: center;
+    border-style: solid;
+    color: #18bc9c;
+  }
+
+  .follow_data{
+    width: 100%;
+    font-size: 30pt;
+    font-weight: bold;
   }
 

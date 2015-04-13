@@ -24,4 +24,6 @@ class UsersController < ApplicationController
     render :"/users/index"
   end
 
+
+
 end
