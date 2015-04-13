@@ -9,7 +9,11 @@
 	border-color: rgb(212,221,232);
 	border-radius: 0.25em;
 }
-/*212221232
-div.post_div {
-	border: 2px solid black;
-}*/
+
+#post_post_content {
+	height: 3.3em;
+	width: 79.5%;
+	word-break: break-word;
+	padding-bottom: 0;
+	vertical-align: top;
+}
