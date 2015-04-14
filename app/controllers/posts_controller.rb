@@ -9,8 +9,15 @@ class PostsController < ApplicationController
     @post = Post.new
   end
 
+  def change_expired
+    respond_to do |format|
+      format.js { }
+    end
+  end
+
   def create
     @post = Post.new(post_params)
+    @post.expired = Time.now + params[:post][:expired].to_i*24*60*60
     @post.user_id = current_user.id
     @post.save
     respond_to do |format|

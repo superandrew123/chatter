@@ -7,7 +7,7 @@ class Post < ActiveRecord::Base
   before_create :set_expired, :set_search
 
   def set_expired
-    self.expired = Time.now + 604800
+    self.expired = Time.now + 604800 if self.expired == nil
   end
 
   def set_search
