@@ -1,4 +1,5 @@
 <%= form_for @post do |f|%>
 	<%= f.text_field :post_content %>
+	<a href="/expired" class="expireSelect"><h3>7 days </h3></a>
 	<%= f.submit "Create Post", :class => 'btn btn-primary'  %>
 <% end %>
