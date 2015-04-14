@@ -5,3 +5,7 @@
 	padding-left: 0.5em;
 	margin-top: 0.65em;
 }
+.expireSelect {
+	display: block;
+	float: right;
+}
