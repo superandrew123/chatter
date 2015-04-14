@@ -1,0 +1,51 @@
+.box {
+background-color: #2c3e50;
+border-radius: 1em;
+color: white;
+height: 100%;
+margin-bottom: 5%;
+margin-left: 25%;
+margin-top: 5%;
+padding-left: 7.5em;
+padding-right: 7.5em;
+padding-top: 4em;
+padding-bottom: 7em;
+width: 50%;
+box-shadow: 3px 3px 5px 6px #ccc;
+}
+
+.header{
+  font-size: 90px;
+  font-weight: lighter;
+  margin-bottom: .6em;
+}
+
+#user_email{
+  border-radius: 1em;
+  color: #2c3e50;
+  height: 3.75em;
+  margin-bottom: .33em;
+  padding-left: 1em;
+  padding-right: 1em;
+  width: 100%;
+}
+
+#user_password{
+  border-radius: 1em;
+  color:#2c3e50;
+  height: 3.75em;
+  margin-bottom: .4em;
+  padding-left: 1em;
+  padding-right: 1em;
+  width: 100%;
+}
+
+[value=go]{
+  background: -webkit-gradient(linear, left top, right bottom, from(#18bc9c), to(#3498db));
+  border-radius: 1em;
+  border-style: none;
+  color: white;
+  height: 3.75em;
+  padding: 0px;
+  width: 100%;
+}
