@@ -4,9 +4,13 @@ class Post < ActiveRecord::Base
 
   validates_presence_of :post_content, :user_id
 
-  before_create :set_expired
+  before_create :set_expired, :set_search
 
   def set_expired
     self.expired = Time.now + 604800
+  end
+
+  def set_search
+    self.search_post_content = self.post_content.downcase
   end
 end

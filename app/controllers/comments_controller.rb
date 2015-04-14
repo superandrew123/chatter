@@ -13,7 +13,6 @@ class CommentsController < ApplicationController
     @comment.user_id = current_user.id
     @comment.save
     # @comment.post.comments.last
-    # binding.pry
     respond_to do |format|
       format.js { }
     end

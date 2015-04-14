@@ -6,7 +6,6 @@ class FollowersController < ApplicationController
   end
 
   def create
-    binding.pry
   end
 
   def destroy
@@ -17,7 +16,6 @@ class FollowersController < ApplicationController
   end
 
   def show
-    binding.pry
   end
 
 end

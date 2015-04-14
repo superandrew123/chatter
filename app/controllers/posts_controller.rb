@@ -13,7 +13,6 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     @post.user_id = current_user.id
     @post.save
-    # binding.pry
     respond_to do |format|
       format.js { }
     end
