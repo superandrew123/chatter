@@ -4,13 +4,9 @@
 (function (e) {
     e.fn.countdown = function (t, n) {
     function i() {
-debugger;
         eventDate = Date.parse(r.date) / 1e3;
-        currentDate = Math.floor(e.now() / 1e3); 
-        eventDate = 0
-          debugger;
+        currentDate = Math.floor(e.now() / 1e3);
         if (eventDate <= currentDate) {
-          
             n.call(this);
             clearInterval(interval)
         }
