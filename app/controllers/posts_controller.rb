@@ -25,6 +25,15 @@ class PostsController < ApplicationController
     end
   end
 
+  def destroy
+    @post = Post.find(params[:id])
+    @post_id = @post.id
+    @post.destroy
+     respond_to do |format|
+        format.js { }
+      end
+   end
+
   private
     def post_params
       params.require(:post).permit(:post_content)
