@@ -23,17 +23,16 @@ class PostsController < ApplicationController
     respond_to do |format|
       format.js { }
     end
+  end
 
   def destroy
-    binding.pry
     @post = Post.find(params[:id])
-    #  first check the epiration date for security
+    @post_id = @post.id
     @post.destroy
-    respond_to do |format|
-      format.js { }
-    end
+     respond_to do |format|
+        format.js { }
+      end
    end
-  end
 
   private
     def post_params
