@@ -22,7 +22,4 @@ class UsersController < ApplicationController
     @results = Search.search(@q)
     render :"/users/index"
   end
-
-
-
 end

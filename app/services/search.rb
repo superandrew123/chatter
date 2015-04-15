@@ -1,5 +1,4 @@
 class Search
-
   def self.search(query)
     if query[0] == "@"
       clean_search = "%#{query[1..-1]}%".downcase

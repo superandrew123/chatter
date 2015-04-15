@@ -24,6 +24,7 @@
 			<% elsif !@following_status %>
 			<%= link_to "Follow", new_follower_path(@user), :class=>"follow_button" if @user != current_user %><br><br>
 			<% end %>
+				<%= link_to "Settings", edit_user_registration_path %>
 			<% else %>
 			<a href="/users/sign_up">Sign-up</a> or <a href="/users/sign_in">Log-in</a> to follow!<br><br>
 			<% end %>
