@@ -22,7 +22,7 @@ class PostsController < ApplicationController
       binding.pry
       if params[:post][:expired] == "very_soon"
         binding.pry
-        @post.expired = Time.now + 30
+        @post.expired = Time.now + 10
       else
         binding.pry
         @post.expired = Time.now + params[:post][:expired].to_i*24*60*60
