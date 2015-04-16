@@ -16,7 +16,6 @@ class PostsController < ApplicationController
   end
 
   def create
-    binding.pry
     @post = Post.new(post_params)
     if params[:expired] != nil
       @post.expired = Time.now + params[:post][:expired].to_i*24*60*60
@@ -30,11 +29,13 @@ class PostsController < ApplicationController
 
   def destroy
     @post = Post.find(params[:id])
-    @post_id = @post.id
-    @post.destroy
-     respond_to do |format|
+    if @post.expired < Time.now
+      @post_id = @post.id
+      @post.destroy
+      respond_to do |format|
         format.js { }
       end
+    end
    end
 
   private
