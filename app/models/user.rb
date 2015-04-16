@@ -18,6 +18,7 @@ class User < ActiveRecord::Base
                     :styles => { :medium => "300x300>", :thumb => "100x100>" }, 
                     :default_url => "/images/:style/missing.png",
                     :bucket => 'flatiron-chatter'
+                    
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
 
   def set_search
