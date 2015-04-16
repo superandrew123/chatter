@@ -16,8 +16,11 @@ class PostsController < ApplicationController
   end
 
   def create
+    binding.pry
     @post = Post.new(post_params)
-    @post.expired = Time.now + params[:post][:expired].to_i*24*60*60
+    if params[:expired] != nil
+      @post.expired = Time.now + params[:post][:expired].to_i*24*60*60
+    end
     @post.user_id = current_user.id
     @post.save
     respond_to do |format|
