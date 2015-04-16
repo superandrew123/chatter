@@ -13,8 +13,12 @@ class UsersController < ApplicationController
         @following_status = true
       end
     end
-    @followings_count = @user.followings.count
-    @followers_count = @user.followers.count
+    @followings = @user.followings.collect do |follower|
+      User.find(follower.followed_id)
+    end.uniq
+    @followers = @user.followers.collect do |follower|
+      User.find(follower.follower_id)
+    end.uniq
   end
 
   def search

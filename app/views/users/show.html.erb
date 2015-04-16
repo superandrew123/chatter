@@ -9,12 +9,19 @@
 <p>&nbsp</p>
 <table class="table" width="100%" cellspacing="0">
 	<tr class="follow_data">
-		<td><%= @followers_count%></td>
-		<td><%= @followings_count%></td>
-	</tr>
-	<tr>
 		<td>followers</td>
 		<td>following</td>
+	</tr>
+	<tr>
+
+		<td><% @followers.each do |follower| %>
+			<%= link_to(follower.handle, user_path(follower)) %><br>  
+		<% end %>
+		</td>
+		<td><% @followings.each do |follower| %>
+			<%= link_to(follower.handle, user_path(follower)) %><br> 
+		<% end %>
+		</td>
 	</tr>
 	<tr>
 		<td colspan="2">

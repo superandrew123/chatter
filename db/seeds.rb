@@ -18,7 +18,7 @@ seed_user_ids = User.all.pluck(:id)
 
 # create all posts from a random user
 seed_post.each do |content|
-  Post.create(user_id: seed_user_ids.sample, post_content: content, expired: (Time.now + rand(86400*7)))
+  Post.create(user_id: seed_user_ids.sample, post_content: content, expired: (Time.now + rand(86400)))
 end
 
 # random content for posts from Ancient Aliens Ipsum
