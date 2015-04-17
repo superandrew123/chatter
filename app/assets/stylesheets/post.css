@@ -12,14 +12,18 @@
 
 #post_post_content {
 	height: 3.3em;
-	width: 85.3333%;
+	width: 97%;
 	word-break: break-word;
 	padding-bottom: 0;
 	vertical-align: top;
 	padding-left: 1em;
-	margin-right: 0.5em;
+
 }
 .btn-primary {
 	height: 49px;
 	
+}
+
+.post_text_field {
+	width:  700px;
 }
