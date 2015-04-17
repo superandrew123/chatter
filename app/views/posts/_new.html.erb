@@ -1,5 +1,22 @@
 <%= form_for @post do |f|%>
-	<%= f.text_field :post_content %>
-	<a href="/expired" class="expireSelect"><h3>7 days </h3></a>
-	<%= f.submit "Create Post", :class => 'btn btn-primary'  %>
+<table>
+  <tr>
+    <td class="post_text_field" >  <%= f.text_field :post_content %>  </td>
+    <td>  <%= f.submit "Create Post", :class => 'btn btn-primary'  %></td>
+  </tr>
+  <tr height="50px" colspan="2"> 
+      <td>      Expires in:&nbsp&nbsp
+        <select name="post[expired]" id="post_expired">
+        <option value="7">7</option>
+        <option value="6">6</option>
+        <option value="5">5</option>
+        <option value="4">4</option>
+        <option value="3">3</option>
+        <option value="2">2</option>
+        <option value="1">1</option>
+        <option value="very_soon">VERY SOON</option>  
+        </select>
+      </td>
+  </tr>
+</table>
 <% end %>
