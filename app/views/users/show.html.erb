@@ -3,7 +3,12 @@
 <h2 class="username"><%= "#{@user.name}" if @user.name.length > 0 %></h2>
 
 <p>&nbsp</p>
-<div class="circular"></div>
+	<% if @user.avatar.url == nil %>
+              <img  style="height:auto; width:auto; max-width:70px; max-height:70px;" src="/images/contact.jpg" alt="">
+	<% else %>
+		<div class="circular" style="background: url(<%=@user.avatar.url %>) no-repeat center center; background-size: cover;"></div>
+	<% end %>
+
 <div class="col-md-3"></div>
 <div class="col-md-6">
 <p>&nbsp</p>
