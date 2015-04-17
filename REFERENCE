@@ -1,0 +1,85 @@
+<!-- <body>
+<h2 class="handle">@<%= @user.handle %></h2>
+<h2 class="username"><%= "#{@user.name}" if @user.name.length > 0 %></h2>
+
+<p>&nbsp</p>
+<div class="circular"></div>
+<div class="col-md-3"></div>
+<div class="col-md-6">
+<p>&nbsp</p>
+<table class="table" width="100%" cellspacing="0">
+  <tr class="follow_data">
+    <td><%= @followers_count%></td>
+    <td><%= @followings_count%></td>
+  </tr>
+  <tr>
+    <td>followers</td>
+    <td>following</td>
+  </tr>
+  <tr>
+    <td colspan="2">
+      <% if current_user %>
+      <% if @following_status %>
+      <%= link_to "Unfollow", @follower, :class=>"follow_button", method: :delete %><br><br>
+      <% elsif !@following_status %>
+      <%= link_to "Follow", new_follower_path(@user), :class=>"follow_button" if @user != current_user %><br><br>
+      <% end %>
+      <% else %>
+      <a href="/users/sign_up">Sign-up</a> or <a href="/users/sign_in">Log-in</a> to follow!<br><br>
+      <% end %>
+    </td>
+  </tr>
+</table>
+  
+
+  <% @user.posts.each do |post| %>
+    <p>Post: <%= post.post_content %></p><br>
+  <% end %>
+
+</div>
+</body>
+ -->
+
+ ***
+
+
+.handle{
+  text-align: center;
+  font-size: 40pt;
+  font-weight: bold;
+}
+
+.username{
+  text-align: center;
+  font-size: 30pt;
+  font-weight: lighter;
+}
+
+.table{
+  margin: 0px;
+  padding: 0px;
+  text-align: center;
+  /*border-style: solid;*/
+  color: #18bc9c;
+}
+
+.follow_data{
+  width: 100%;
+  font-size: 30pt;
+  font-weight: bold;
+}
+.follow_button {
+  font-size: 2em;
+}
+.follow_table_row {
+
+}
+
+
+
+
+
+
+
+
+
