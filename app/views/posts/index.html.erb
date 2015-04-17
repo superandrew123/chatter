@@ -2,9 +2,23 @@
 <div class="col-md-8">
 
 <% if current_user != nil %>
-	<%= link_to "All posts", posts_path %>
-	<%= link_to "My follower's posts", followers_index_path %>
-	<%= link_to "Who I'm following's posts", following_index_path %>
+   <div id="feed">
+	<%= link_to posts_path do  %>
+         <div class="btn btn-default">
+           All Posts
+         </div>
+      <% end %>
+	<%= link_to followers_index_path do %>
+         <div class="btn btn-default">
+           My Followers
+         </div>
+      <% end %>
+	<%= link_to following_index_path do %>
+         <div class="btn btn-default">
+           Who I am Following
+         </div>
+      <% end %>
+    </div>
 	<%= render "new" %>
 <% end %>
 <br>
