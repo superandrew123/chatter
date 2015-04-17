@@ -1,5 +1,13 @@
 class PostsController < ApplicationController
 
+  def filter
+    if current_user
+      redirect_to following_index_path
+    else
+      redirect_to posts_path
+    end
+  end
+
   def index
     @posts = Post.all.order(created_at: :desc)
     @post = Post.new
@@ -41,6 +49,24 @@ class PostsController < ApplicationController
       end
     end
    end
+
+  def followers_index
+    @user = current_user
+    @followers = @user.followers.collect {|follow| User.find(follow.follower_id)}
+    @posts = @followers.collect {|follower| follower.posts}
+    @posts.flatten!
+    @post = Post.new
+    render "index"
+  end
+
+  def following_index
+    @user = current_user
+    @followings = @user.followings.collect {|follow| User.find(follow.followed_id)}
+    @posts = @followings.collect {|follower| follower.posts}
+    @posts.flatten!
+    @post = Post.new
+    render "index"
+  end
 
   private
     def post_params
