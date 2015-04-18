@@ -1,10 +1,11 @@
 .post_content {
 	font-size: 1.4em;
+	width: 30em;
 }
 .post_div {
 	padding: 1em;
 	background-color: rgb(231,236,238);
-	margin-bottom: 1em;
+	/*margin-bottom: 1em;*/
 	border-style: solid;
 	border-color: rgb(212,221,232);
 	border-radius: 0.25em;

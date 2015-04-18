@@ -1,28 +1,27 @@
 <div class="col-md-2"></div>
 <div class="col-md-8">
-
-<% if current_user != nil %>
-   <div id="feed">
-	<%= link_to posts_path do  %>
-         <div class="btn btn-default">
-           All Posts
-         </div>
+  <% if current_user != nil %>
+    <div id="feed">
+      <%= link_to posts_path do  %>
+        <div class="btn btn-default">
+          All Posts
+        </div>
       <% end %>
-	<%= link_to followers_index_path do %>
-         <div class="btn btn-default">
-           My Followers
-         </div>
+      <%= link_to followers_index_path do %>
+        <div class="btn btn-default">
+          My Followers
+        </div>
       <% end %>
-	<%= link_to following_index_path do %>
-         <div class="btn btn-default">
-           Who I am Following
-         </div>
+      <%= link_to following_index_path do %>
+        <div class="btn btn-default">
+          Who I am Following
+        </div>
       <% end %>
     </div>
-	<%= render "new" %>
-<% end %>
-<br>
-<div id="posts">
+    <%= render "new" %>
+  <% end %>
+  <br>
+  <div id="posts">
 	<% @posts.each do |post|%>
 		<%= render "show_post", :post => post %>
 	<% end %>

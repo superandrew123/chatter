@@ -1,37 +1,40 @@
 <table>
 	<tr>
 		<td style="background: url(<%=post.user.avatar.url %>) no-repeat center center; background-size: cover; width:150px;"></td>
-		<td> <div id="post_<%= post.id %>"class="post_div" post_id="<%= post.id %>">
-	<div class="countdown">
-		<span class="expiredate" value="<%= post.expired %>">Expiring in: </span>		
-			<span class="days">00</span>
-			<span class="timeRefDays">days</span>
-			<span class="hours">00</span>
-			<span class="timeRefHours">hours</span>
-			<span class="minutes">00</span>
-			<span class="timeRefMinutes">minutes</span>
-			<span class="seconds">00</span>
-			<span class="timeRefSeconds">seconds</span>
-		</div>
-	<p class="post_content"><%= post.post_content %></p>
+		<td> 
+		<div id="post_<%= post.id %>"class="post_div" post_id="<%= post.id %>">
+			<div class="countdown">
+				<span class="expiredate" value="<%= post.expired %>">Expiring in: </span>		
+				<span class="days">00</span>
+				<span class="timeRefDays">days</span>
+				<span class="hours">00</span>
+				<span class="timeRefHours">hours</span>
+				<span class="minutes">00</span>
+				<span class="timeRefMinutes">minutes</span>
+				<span class="seconds">00</span>
+				<span class="timeRefSeconds">seconds</span>
+			</div>
+		<p class="post_content"><%= post.post_content %></p>
 
-	<p>by: <%= link_to "#{post.user.handle}", user_path(post.user) %></p>
-	</div> </td>
+		<p>by: <%= link_to "#{post.user.handle}", user_path(post.user) %></p>
+		</div> 
+		</td>
 	</tr>
 	<tr>
 		<td> &nbsp </td>
-		<td> 	<div id="comment_post_<%= post.id %>">
-		<% post.comments.each do |comment|%>
-			<%= render "/comments/show_comment", :comment => comment %>
+		<td> 	
+		<div id="comment_post_<%= post.id %>">
+			<% post.comments.each do |comment|%>
+				<%= render "/comments/show_comment", :comment => comment %>
+			<% end %>
+		</div>
+		<% if current_user != nil %>
+			<a class="commentButton" href="/posts/<%= post.id %>/comments/new">Reply</a><br> 
 		<% end %>
-	</div>
-	<% if current_user != nil %>
-		<a class="commentButton" href="/posts/<%= post.id %>/comments/new">Reply</a><br> 
-	<% end %>
 	 </td>
 	</tr>
 </table>
-
+<br><br>
 
 
 
