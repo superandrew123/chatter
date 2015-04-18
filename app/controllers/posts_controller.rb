@@ -48,7 +48,7 @@ class PostsController < ApplicationController
         format.js { }
       end
     end
-   end
+  end
 
   def followers_index
     @user = current_user

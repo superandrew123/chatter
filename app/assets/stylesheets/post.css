@@ -5,7 +5,6 @@
 .post_div {
 	padding: 1em;
 	background-color: rgb(231,236,238);
-	/*margin-bottom: 1em;*/
 	border-style: solid;
 	border-color: rgb(212,221,232);
 	border-radius: 0.25em;
@@ -31,5 +30,8 @@
 
 
 #feed {
-  margin: 1em;
+  margin: 1em 1em 1em 0;
+}
+.postTable {
+	margin-bottom: 1em;
 }

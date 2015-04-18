@@ -3,10 +3,12 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 #comment_comment_content {
 	height: 3.3em;
-	width: 86%;
 	word-break: break-word;
 	padding-bottom: 0;
 	vertical-align: top;
 	padding-left: 1em;
 	margin-right: 0.5em;
+}
+.new_comment input[type="text"] {
+	width: 556px;
 }

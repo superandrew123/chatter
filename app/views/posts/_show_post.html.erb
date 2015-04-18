@@ -1,7 +1,8 @@
-<table>
+<table class="postTable">
 	<tr>
 		<td style="background: url(<%=post.user.avatar.url %>) no-repeat center center; background-size: cover; width:150px;"></td>
-		<td> 
+		<td style="width: 10px;">&nbsp</td>
+		<td>
 		<div id="post_<%= post.id %>"class="post_div" post_id="<%= post.id %>">
 			<div class="countdown">
 				<span class="expiredate" value="<%= post.expired %>">Expiring in: </span>		
@@ -22,6 +23,7 @@
 	</tr>
 	<tr>
 		<td> &nbsp </td>
+		<td> &nbsp </td>		
 		<td> 	
 		<div id="comment_post_<%= post.id %>">
 			<% post.comments.each do |comment|%>
@@ -34,7 +36,6 @@
 	 </td>
 	</tr>
 </table>
-<br><br>
 
 
 
