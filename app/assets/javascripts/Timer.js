@@ -8,7 +8,7 @@
     // subclass’s constructor actually returns an 
     // instance of your init class.
     e.fn.countdown = function (t, n) {      // fn = jQuery.prototype
-        // By subclassing jQuery, and working strictly with instances of your subclass, you hide all your plugins from anyone who’s directly instantiating the plain jQuery class.
+        // By subclassing jQuery, and working strictly with instances of your subclass, you hide the plugin from anyone who’s directly instantiating the plain jQuery class.
         // fn contains all of the jQuery object methods on the event function of the countdown class and we want to write
         // our own method for each instance
     function i() {
@@ -50,26 +50,26 @@
     // Merge the contents of the event object onto the jQuery prototype to provide new jQuery instance methods.   
     //The jQuery.fn.extend() method extends the jQuery prototype ($.fn) object to provide new methods that can be chained to the jQuery() function.
 
-// Inside the myPlugin function(e.fn.countdown), this refers to 
-// the jQuery object the function was called from. And depending on the 
-// type of plugin, jQuery objects can be returned so the results can be 
-// chained. Settings can be handled with jQuery.extend.
+    // Inside the myPlugin function(e.fn.countdown), this refers to 
+    // the jQuery object the function was called from. And depending on the 
+    // type of plugin, jQuery objects can be returned so the results can be 
+    // chained. Settings can be handled with jQuery.extend.
     t && e.extend(r, t);  
     i();  //  call function i with the new extended event jQuery instance 
     interval = setInterval(i, 1e3)  //  set interval to 1e3 = 1000 = 1 second 
     }
     })(jQuery);
-// Use an Immediately Invoked Function Expression with (jQuery)
+    // Use an Immediately Invoked Function Expression with (jQuery)
 
-// You can continue to use the standard $ by wrapping your 
-// code in an immediately invoked function expression; this is also 
-// a standard pattern for jQuery plugin authoring, where the 
-// author cannot know whether another library will have taken 
-// over the $. 
+    // You can continue to use the standard $ by wrapping your 
+    // code in an immediately invoked function expression; this is also 
+    // a standard pattern for jQuery plugin authoring, where the 
+    // author cannot know whether another library will have taken 
+    // over the $. 
 
     $(document).ready(function () {  //  To defer executing the e function it uses an anonymous functino as a wrappper.  The anonymous function calls function e after the document is loaded.
     function e() {
-        //  this code can be useful if you don't have the exiration date stored in the database:
+        //  this code can be useful if you don't have the expiration date stored in the database:
         // var e = new Date;  //create a date object with the current date and time
         // e.setDate(e.getDate() + 60);
         // dd = e.getDate();
