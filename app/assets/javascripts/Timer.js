@@ -1,9 +1,18 @@
 /*
-* Count Down to Post expired Date and Time
+* Plugin that Counts Down to Post expired Date and Time
 */
-(function (e) {
-    e.fn.countdown = function (t, n) {
+(function (e) {             // passing the event object
+    //  create a subclass of jQuery and a companion 
+    // init helper class, derive your helper class from 
+    // your actual jQuery subclass, and ensure your 
+    // subclass’s constructor actually returns an 
+    // instance of your init class.
+    e.fn.countdown = function (t, n) {      // fn = jQuery.prototype
+        // By subclassing jQuery, and working strictly with instances of your subclass, you hide all your plugins from anyone who’s directly instantiating the plain jQuery class.
+        // fn contains all of the jQuery object methods on the event function of the countdown class and we want to write
+        // our own method for each instance
     function i() {
+        //  Assign the callback upon initialization, format the countdown %w weeks %d days %H hours %M minutes %S seconds where each directive value is displayed within his own DOM element
         eventDate = Date.parse(r.date) / 1e3;
         currentDate = Math.floor(e.now() / 1e3);
         seconds = eventDate - currentDate;
@@ -38,25 +47,41 @@
         date: null,
         format: null
     };
-    t && e.extend(r, t);
-    i();
-    interval = setInterval(i, 1e3)
+    // Merge the contents of the event object onto the jQuery prototype to provide new jQuery instance methods.   
+    //The jQuery.fn.extend() method extends the jQuery prototype ($.fn) object to provide new methods that can be chained to the jQuery() function.
+
+// Inside the myPlugin function(e.fn.countdown), this refers to 
+// the jQuery object the function was called from. And depending on the 
+// type of plugin, jQuery objects can be returned so the results can be 
+// chained. Settings can be handled with jQuery.extend.
+    t && e.extend(r, t);  
+    i();  //  call function i with the new extended event jQuery instance 
+    interval = setInterval(i, 1e3)  //  set interval to 1e3 = 1000 = 1 second 
     }
     })(jQuery);
-    $(document).ready(function () {
+// Use an Immediately Invoked Function Expression with (jQuery)
+
+// You can continue to use the standard $ by wrapping your 
+// code in an immediately invoked function expression; this is also 
+// a standard pattern for jQuery plugin authoring, where the 
+// author cannot know whether another library will have taken 
+// over the $. 
+
+    $(document).ready(function () {  //  To defer executing the e function it uses an anonymous functino as a wrappper.  The anonymous function calls function e after the document is loaded.
     function e() {
-        var e = new Date;
-        e.setDate(e.getDate() + 60);
-        dd = e.getDate();
-        mm = e.getMonth() + 1;
-        y = e.getFullYear();
-        futureFormattedDate = mm + "/" + dd + "/" + y;
-        return futureFormattedDate
+        //  this code can be useful if you don't have the exiration date stored in the database:
+        // var e = new Date;  //create a date object with the current date and time
+        // e.setDate(e.getDate() + 60);
+        // dd = e.getDate();
+        // mm = e.getMonth() + 1;
+        // y = e.getFullYear();
+        // futureFormattedDate = mm + "/" + dd + "/" + y;
+        // return futureFormattedDate
     }
 
-    $(".countdown").each(function(){
+    $(".countdown").each(function(){    //loop through all divs with countdown as class
         $(this).countdown({
-            date: $(this).children('.expiredate').attr("value"),
+            date: $(this).children('.expiredate').attr("value"),  //the expire date from the database
             format: "on"
         });
     })

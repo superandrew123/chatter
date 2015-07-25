@@ -35,3 +35,10 @@
 .postTable {
 	margin-bottom: 1em;
 }
+
+.countdown  {
+  display: inline-block;
+  padding: 5px;
+  background: #ffffff;
+  margin: 0 0 20px;
+}
