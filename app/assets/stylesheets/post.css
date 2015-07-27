@@ -37,8 +37,12 @@
 }
 
 .countdown  {
+  border-radius: 10px;
   display: inline-block;
   padding: 5px;
-  background: #ffffff;
+  background: #FFFFFF;
   margin: 0 0 20px;
+  color: #ffffff;
+  background-color: #1a242f;
 }
+
