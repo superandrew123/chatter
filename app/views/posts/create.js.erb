@@ -1,4 +1,4 @@
-// select the div partial will go inside of
+// select the div partial will go inside of the element and prepend so it shows the most recent
 $("#posts").prepend("<%= j render partial:"show_post", locals:{post: @post} %>");
 $(".countdown").each(function(){
 	$(this).countdown({

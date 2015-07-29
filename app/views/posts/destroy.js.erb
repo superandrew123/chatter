@@ -1,3 +1,6 @@
-$("#post_<%= @post_id %>").slideUp(function(){
-	$(this).parent().parent().parent().parent().remove();
+// remove the deleted post from the DOM
+$("#trpost_<%= @post_id %>").slideUp(function(){
+	$(this).remove();
 });
+// refactor
+//  $(this).parent().parent().parent().parent().remove();

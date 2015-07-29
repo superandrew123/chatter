@@ -1,4 +1,4 @@
-// Ajax for posts on main page
+// Ajax for posts on main page create a new post
 
 function newPost(){
 	$(".new_post").on("submit", function(e){

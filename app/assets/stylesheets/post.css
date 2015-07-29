@@ -1,6 +1,6 @@
 .post_content {
-	font-size: 1.4em;
-	width: 30em;
+
+	width: 40em;
 }
 .post_div {
 	padding: 1em;
@@ -33,10 +33,10 @@
   margin: 1em 1em 1em 0;
 }
 .postTable {
-	margin-bottom: 1em;
+	    padding: 5px;
 }
 
-.countdown  {
+.countdown-date  {
   border-radius: 10px;
   display: inline-block;
   padding: 5px;
@@ -46,3 +46,12 @@
   background-color: #1a242f;
 }
 
+td-height {
+    height: 30px;
+    vertical-align: bottom;
+}
+
+.imgstyle {
+  float: right;
+  margin: 0 0 10px 10px;
+}

@@ -1,6 +1,7 @@
 <table class="postTable">
-	<tr>
-		<td style="background: url(<%=post.user.avatar.url %>) no-repeat center center; background-size: cover; width:150px;"></td>
+	<tr id="trpost_<%= post.id %>">
+		<td style="background: url(<%=post.user.avatar.url %>) no-repeat center; background-size: 120px 80px; width: 180px;">
+		</td>
 		<td style="width: 10px;">&nbsp</td>
 		<td>
 		<div id="post_<%= post.id %>"class="post_div" post_id="<%= post.id %>">

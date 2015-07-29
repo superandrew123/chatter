@@ -1,3 +1,5 @@
+// set the expiration window for the post
+
 function expireButton() {
 	$(".expireSelect").on("click", changeExpire)
 }

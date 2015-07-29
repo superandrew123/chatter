@@ -27,7 +27,7 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     if params[:post][:expired] != nil
       if params[:post][:expired] == "very_soon"
-        @post.expired = Time.now + 10
+        @post.expired = Time.now + 10     
       else
         @post.expired = Time.now + params[:post][:expired].to_i*24*60*60
       end

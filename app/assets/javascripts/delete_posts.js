@@ -1,6 +1,6 @@
 // on document ready
 // iterate over all the post divs
-// if it has expired
+// if it has expired make ajax call to destroy and remove it from the post element
 // 
 $(document).ready(function(){
   setInterval(function(){

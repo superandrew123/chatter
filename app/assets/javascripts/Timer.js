@@ -7,7 +7,7 @@
     // your actual jQuery subclass, and ensure your 
     // subclass’s constructor actually returns an 
     // instance of your init class.
-    e.fn.countdown = function (t, n) {      // fn = jQuery.prototype
+    e.fn.countdown = function (t, n) {       // fn = jQuery.prototype
         // By subclassing jQuery, and working strictly with instances of your subclass, you hide the plugin from anyone who’s directly instantiating the plain jQuery class.
         // fn contains all of the jQuery object methods on the event function of the countdown class and we want to write
         // our own method for each instance
@@ -54,20 +54,21 @@
     // the jQuery object the function was called from. And depending on the 
     // type of plugin, jQuery objects can be returned so the results can be 
     // chained. Settings can be handled with jQuery.extend.
-    t && e.extend(r, t);  
+    t && e.extend(r, t);    // extend the jQuery prototype ($.fn) object to provide the new method, countdown, that can be chained to the jQuery() function.
+
     i();  //  call function i with the new extended event jQuery instance 
     interval = setInterval(i, 1e3)  //  set interval to 1e3 = 1000 = 1 second 
     }
     })(jQuery);
     // Use an Immediately Invoked Function Expression with (jQuery)
 
-    // You can continue to use the standard $ by wrapping your 
+    // continue to use the standard $ by wrapping your 
     // code in an immediately invoked function expression; this is also 
     // a standard pattern for jQuery plugin authoring, where the 
     // author cannot know whether another library will have taken 
     // over the $. 
 
-    $(document).ready(function () {  //  To defer executing the e function it uses an anonymous functino as a wrappper.  The anonymous function calls function e after the document is loaded.
+    $(document).ready(function () { //  To defer executing the e function it uses an anonymous functino as a wrappper.  The anonymous function calls function e after the document is loaded.
     function e() {
         //  this code can be useful if you don't have the expiration date stored in the database:
         // var e = new Date;  //create a date object with the current date and time
@@ -79,7 +80,7 @@
         // return futureFormattedDate
     }
 
-    $(".countdown").each(function(){    //loop through all divs with countdown as class
+    $(".countdown").each(function(){  //loop through all divs with countdown as class
         $(this).countdown({
             date: $(this).children('.expiredate').attr("value"),  //the expire date from the database
             format: "on"
